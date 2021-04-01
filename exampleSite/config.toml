@@ -113,11 +113,11 @@ link = "#"
 ################################# Plugins #####################################
 # CSS plugins
 [[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
+link = "plugins/bootstrap/css/bootstrap.min.css"
 attributes = "media='screen'"
 
 [[params.plugins.css]]
-link = "plugins/Ionicons/css/ionicons.min.css"
+link = "plugins/ionicons/css/ionicons.min.css"
 attributes = ""
 
 [[params.plugins.css]]
@@ -130,11 +130,11 @@ attributes = ""
 
 # JS plugins
 [[params.plugins.js]]
-link = "plugins/jQuery/jquery.min.js"
+link = "plugins/jquery/jquery.min.js"
 attributes = ""
 
 [[params.plugins.js]]
-link = "plugins/bootstrap/bootstrap.min.js"
+link = "plugins/bootstrap/js/bootstrap.min.js"
 attributes = ""
 
 [[params.plugins.js]]
