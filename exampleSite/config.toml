@@ -19,7 +19,7 @@ googleAnalytics = ""
 # Documentation: https://gohugo.io/templates/output-formats/#customizing-output-formats
 
 [outputs]
-home = ["HTML"]
+home = [ "HTML" ]
 
 
 ################################# Markup ######################################
