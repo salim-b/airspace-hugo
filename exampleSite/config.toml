@@ -38,7 +38,6 @@ unsafe = true
 ################################# Default parameters ##########################
 [params]
 logo = "images/logo.png"
-logo_width = "150px"
 # OpenGraph / Twitter Card metadata
 title = "Airspace Hugo Template"
 description = "This is meta description"
@@ -95,6 +94,26 @@ preloader = "" # use .png , .svg or .gif image
 [params.cookies]
 enable = true
 expire_days = 2
+
+
+################################# Stylesheet customization ####################
+[params.style]
+# Colors
+color_primary = "#655E7A"
+color_secondary = "#1BBB1B"
+color_light = "#FFF"
+color_dark = "#000"
+color_border = "#DEDEDE"
+color_alert = "#C7254E"
+color_success = "#1BBB1B"
+# Fonts
+font_primary = "'Roboto', sans-serif"
+font_secondary = "'Volkhov', serif"
+font_icon = "'themefisher-font'"
+# Height of the top navigation bar; must be >= 50px
+height_nav_bar = "90px"
+# Minimum height of the footer; should be >= 170px
+min_height_footer = "205px"
 
 
 ################################# Social Media ################################

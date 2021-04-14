@@ -8,7 +8,7 @@ iframe {
   border: 0;
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
 }
@@ -18,19 +18,19 @@ a:focus,
 a:hover {
   text-decoration: none;
   outline: 0;
-  color: $primary-color;
+  color: $color-primary;
 }
 
 blockquote {
   font-size: 18px;
-  border-color: $primary-color;
+  border-color: $color-primary;
   padding: 20px 40px;
   text-align: left;
   color: #777;
 }
 
 .navbar-toggle .icon-bar {
-  background: $primary-color;
+  background: $color-primary;
 }
 
 input[type="email"],
@@ -44,10 +44,9 @@ input[type="tel"] {
 
   &:focus {
     box-shadow: none;
-    border: 1px solid $primary-color;
+    border: 1px solid $color-primary;
   }
 }
-
 
 .form-control {
   box-shadow: none;
@@ -55,21 +54,20 @@ input[type="tel"] {
 
   &:focus {
     box-shadow: none;
-    border: 1px solid $primary-color;
+    border: 1px solid $color-primary;
   }
 }
-
 
 .slick-slide {
   outline: 0
 }
 
 
-// Button Style
 
+// Buttons
 .btn-main {
-  background: $primary-color;
-  color: $light;
+  background: $color-primary;
+  color: $color-light;
   display: inline-block;
   font-size: 14px;
   letter-spacing: 1px;
@@ -87,33 +85,31 @@ input[type="tel"] {
   }
 
   &:hover {
-    background: darken($primary-color, 20%);
-    color: $light;
+    background: darken($color-primary, 20%);
+    color: $color-light;
   }
 }
-
 
 .btn-solid-border {
-  border: 1px solid $light;
+  border: 1px solid $color-light;
   background: transparent;
-  color: $light;
+  color: $color-light;
 
   &:hover {
-    border: 1px solid $primary-color;
-    background: $primary-color;
+    border: 1px solid $color-primary;
+    background: $color-primary;
   }
 }
-
 
 .btn-transparent {
   @extend .btn-main;
   background: transparent;
   padding: 0;
-  color: $primary-color;
+  color: $color-primary;
 
   &:hover {
     background: transparent;
-    color: $primary-color;
+    color: $color-primary;
   }
 }
 
@@ -143,19 +139,11 @@ input[type="tel"] {
   border-radius: 50px;
 }
 
-
 .btn.active:focus,
 .btn:active:focus,
 .btn:focus {
   outline: 0;
 }
-
-
-
-
-
-
-
 
 
 
@@ -192,8 +180,8 @@ input[type="tel"] {
 }
 
 
-/* preloader */
 
+// Preloader
 .preloader {
   position: fixed;
   top: 0;
@@ -208,7 +196,7 @@ input[type="tel"] {
 }
 
 .bg-shadow {
-  background-color: $light;
+  background-color: $color-light;
   box-shadow: 0 16px 24px rgba(0, 0, 0, .08);
   padding: 20px;
 }
@@ -218,21 +206,22 @@ input[type="tel"] {
 }
 
 .bg-primary {
-  background: $primary-color;
+  background: $color-primary;
 }
 
 .bg-primary-dark {
-  background: darken($primary-color, 10%);
+  background: darken($color-primary, 10%);
 }
 
 .bg-primary-darker {
-  background: darken($primary-color, 20%);
+  background: darken($color-primary, 20%);
 
 }
 
 .bg-dark {
   background: #202122;
 }
+
 
 
 .section {
@@ -266,10 +255,9 @@ input[type="tel"] {
   p {
     font-style: italic;
     color: #666;
-    font-family: $secondary-font;
+    font-family: $font-secondary;
   }
 }
-
 
 .section-subtitle {
   font-size: 28px;
@@ -277,29 +265,6 @@ input[type="tel"] {
   margin-bottom: 30px;
 
 }
-
-
-.page-title {
-  padding: 100px 0;
-  @extend .overly;
-
-  .block {
-    text-align: center;
-
-    h1 {
-      color: $light;
-      font-weight: 200;
-      letter-spacing: 6px;
-      margin-top: 0;
-      text-transform: capitalize;
-    }
-
-    p {
-      color: $light;
-    }
-  }
-}
-
 
 .heading {
   padding-bottom: 60px;
@@ -322,17 +287,41 @@ input[type="tel"] {
 
 
 
+// Page
+.page-responsive-height {
+	display: flex;
+	align-items: center;
+	min-height: calc(100vh - (#{$height-nav-bar} + #{$min-height-footer}));
+}
 
+.page-title {
+  padding: 100px 0;
+  @extend .overly;
 
+  .block {
+    text-align: center;
 
+    h1 {
+      color: $color-light;
+      font-weight: 200;
+      letter-spacing: 6px;
+      margin-top: 0;
+      text-transform: capitalize;
+    }
 
-
+    p {
+      color: $color-light;
+    }
+  }
+}
 
 .page-wrapper {
   padding: 70px 0;
 }
 
-// Social Media Icons
+
+
+// Social media icons
 .social-media-icons {
   ul {
     li {
@@ -343,7 +332,7 @@ input[type="tel"] {
         color: #333;
         display: inline-block;
         padding: 7px 12px;
-        color: $light;
+        color: $color-light;
 
       }
 
@@ -423,7 +412,6 @@ input[type="tel"] {
 
 
 
-
 .commonSelect {
   margin-left: 10px;
   padding-right: 6px;
@@ -431,7 +419,7 @@ input[type="tel"] {
 
   &:before {
     content: '\f3d0';
-    font-family: $icon-font;
+    font-family: $font-icon;
     position: absolute;
     right: -4px;
     top: 4px;
@@ -464,8 +452,8 @@ input[type="tel"] {
     }
 
     li.active a {
-      background-color: $primary-color;
-      border: 1px solid $primary-color;
+      background-color: $color-primary;
+      border: 1px solid $color-primary;
       color: #ffffff;
     }
 
@@ -475,17 +463,18 @@ input[type="tel"] {
 
       &:hover {
         border: 1px solid transparent;
-        background: $primary-color;
-        color: $light;
+        background: $color-primary;
+        color: $color-light;
       }
     }
   }
 
   .tab-content {
     padding: 20px;
-    border: 1px solid $border-color;
+    border: 1px solid $color-border;
   }
 }
+
 
 
 .commonAccordion {
@@ -513,7 +502,7 @@ input[type="tel"] {
         content: "\f209";
         position: absolute;
         right: 25px;
-        font-family: $icon-font;
+        font-family: $font-icon;
       }
 
       a.collapsed:before {
@@ -538,7 +527,7 @@ input[type="tel"] {
 
 
 .play-icon {
-  border: 1px solid $border-color;
+  border: 1px solid $color-border;
   display: inline-block;
   width: 60px;
   height: 60px;
@@ -563,7 +552,7 @@ input[type="tel"] {
 
 .alert-solid {
   background: transparent;
-  color: $primary-color;
+  color: $color-primary;
 }
 
 .buttonPart {
@@ -599,7 +588,7 @@ input[type="tel"] {
 
 .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
-  background: $primary-color !important;
+  background: $color-primary !important;
 }
 
 
@@ -618,6 +607,8 @@ input[type="tel"] {
 }
 
 
+
+// E-mail obfuscation
 span.cloaked-e-mail:before {
   content: attr(data-domain) "\0040" attr(data-user);
   unicode-bidi: bidi-override;
