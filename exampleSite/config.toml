@@ -96,6 +96,14 @@ enable = true
 expire_days = 2
 
 
+################################# counter.dev analytics #######################
+# This is a [privacy-friendly alternative](https://counter.dev/privacy.html) to Google Analytics & Co.
+[params.counter]
+enable = true
+# counter.dev username, see https://counter.dev/setup.html
+username = ""
+
+
 ################################# Stylesheet customization ####################
 [params.style]
 # Colors
