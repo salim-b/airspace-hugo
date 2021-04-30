@@ -9,14 +9,13 @@ fields:
   name: description
   label: description
   description: this is meta description
-- type: image_gallery
-  name: images
-  label: post image(s)
-  description: Project image(s); the 1st image is visible, the others are only used for Open Graph metadata
+- type: file
+  name: image
+  label: image
 - type: file
   name: bg_image
-  label: background image
-  description: Page header background image
+  label: bg image
+  description: page header background image
 - type: text
   name: category
   label: category
