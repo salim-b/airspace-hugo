@@ -57,15 +57,17 @@
           }
 
           &:active {
+            padding-left: 24px;
             border: 1px solid $color-primary;
             border-radius: 30px;
+            @include transition (padding, 0s);
           }
         }
 
         a.current {
           color: #fff;
           background: $color-primary;
-          border: 1px solid $color-primary;;
+          border: 1px solid $color-primary;
           border-radius: 30px;
           pointer-events: none;
           cursor: default;
@@ -93,21 +95,23 @@
           @include transition-multi (background-color 0.3s ease, border 0.3s ease, color 0.1s ease);
 
           &:hover {
-            color: $color-light;
-            background: $color-primary;
-            border: 1px solid $color-primary;
+            color: $color-primary;
+            background: rgba($color-primary, 0.3);
+            border: 1px solid rgba($color-primary, 0.3);
           }
 
           &:active {
             color: $color-primary;
+            border: 1px solid $color-primary;
             background: #fff;
+            @include transition (background-color, 0.1s, ease);
           }
         }
 
         a.current {
           color: #fff;
-          background: $color-primary;;
-          border: 1px solid $color-primary;;
+          background: $color-primary;
+          border: 1px solid $color-primary;
           pointer-events: none;
           cursor: default;
         }
