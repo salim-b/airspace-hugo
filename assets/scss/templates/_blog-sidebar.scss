@@ -10,7 +10,7 @@
     border-bottom: 1px solid $color-border;
   }
 
-  // latest Posts
+  // Latest Posts
   &.widget-latest-post {
     .media {
       .media-object {
@@ -31,10 +31,9 @@
       }
     }
   }
+  //end Latest Posts
 
-  //end latest posts
-
-  // Caterogry
+  // Categories
   &.widget-category {
     ul {
       li {
@@ -74,10 +73,9 @@
       }
     }
   }
+  // end Categories
 
-  //end caterogry
-
-  // Tag Cloud
+  // Tags
   &.widget-tag {
     ul {
       li {
@@ -92,7 +90,7 @@
           border: 1px solid #dedede;
           border-radius: 30px;
           font-size: 14px;
-          @include transition-multi (background-color 0.3s ease, border-color 0.5s ease, color 0.1s ease);
+          @include transition-multi (background-color 0.3s ease, border 0.3s ease, color 0.1s ease);
 
           &:hover {
             color: $color-light;
@@ -111,6 +109,19 @@
             background: #fff;
             border: 1px solid #dedede;
           }
+
+          &:active {
+            color: $color-primary;
+            background: #fff;
+          }
+        }
+
+        a.current {
+          color: #fff;
+          background: $color-primary;;
+          border: 1px solid $color-primary;;
+          pointer-events: none;
+          cursor: default;
         }
 
         a.current {
@@ -123,13 +134,13 @@
 
         a.current {
           color: #fff;
-          background: $color-primary;;
-          border: 1px solid $color-primary;;
+          background: $color-primary;
+          border: 1px solid $color-primary;
           pointer-events: none;
           cursor: default;
         }
       }
     }
   }
-
+  // end Tags
 }
