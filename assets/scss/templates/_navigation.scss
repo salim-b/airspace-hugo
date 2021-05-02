@@ -36,37 +36,45 @@
       }
     }
 
+
     .navbar-nav {
-      >li {
+      a {
+        color: #5C5C5C;
+        text-transform: uppercase;
 
-        >a {
-          color: #5C5C5C;
-          text-transform: uppercase;
-
-          font : {
-            weight: 500;
-            size: 14px;
-          }
-
-          &:focus {
-            color: #000;
-            background: none;
-          }
-
-          &:hover {
-            background: rgba($color-primary, 0.5);
-            color: #000;
-            @include transition (all, 0.3s, ease);
-          }
-
-          &:hover:active {
-            color: #000;
-          }
+        font : {
+          weight: 500;
+          size: 14px;
         }
 
-        select {
-          margin: 10px 15px;
+        &:focus {
+          color: #000;
+          background: none;
         }
+
+        &:hover {
+          background: rgba($color-primary, 0.5);
+          color: #000;
+          @include transition (all, 0.3s, ease);
+        }
+
+        &:hover:active {
+          color: #000;
+        }
+      }
+
+      a.current {
+        color: #000;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      a.current-parent {
+        color: #000;
+      }
+
+      select {
+        margin: 10px 15px;
       }
     }
 
@@ -77,16 +85,23 @@
       box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
 
       a {
+        text-transform: none;
         font-weight: normal;
         color: #808080;
         padding: 10px 20px;
-        @include transition (all, 0.3s, ease);
+        @include transition-multi (color 0.1s ease, padding 0.3s ease);
 
         &:hover {
           background: rgba($color-primary, 0.5);
           color: #000;
           padding-left: 25px;
         }
+      }
+
+      a.current {
+        padding-left: 25px;
+        color: $color-light;
+        background: $color-primary;
       }
     }
   }
