@@ -306,9 +306,9 @@ input[type="tel"] {
 
 // Page
 .page-responsive-height {
-	display: flex;
-	align-items: center;
-	min-height: calc(100vh - (#{$height-nav-bar} + #{$min-height-footer}));
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - (#{$height-nav-bar} + #{$min-height-footer}));
 }
 
 .page-title {
@@ -635,4 +635,11 @@ span.cloaked-e-mail:before {
   content: attr(data-domain) "\0040" attr(data-user);
   unicode-bidi: bidi-override;
   direction: rtl;
+}
+
+@media (min-width: 992px) {
+  .row .no-float {
+      display: table-cell;
+      float: none;
+  }
 }

@@ -1,34 +1,35 @@
 .page-message-sent {
-	text-align: center;
 
-	h1 {
-		font-size: 50px;
-		font-weight: bold;
-		@include mobile {
-			font-size: 40px;
-		}
-		@include mobile-xs {
-			font-size: 30px;
-		}
-	}
+  text-align: center;
 
-	h2 {
-		text-transform:uppercase;
-		font-size: 20px;
-		font-weight: bold;
-		letter-spacing: 1px;
-		margin-top: 30px;
-	}
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    @include mobile {
+      font-size: 40px;
+    }
+    @include mobile-xs {
+      font-size: 30px;
+    }
+  }
+
+  h2 {
+    text-transform:uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 30px;
+  }
 
   img {
     width: 50%;
     max-height: 200px;
-		margin-top: 40px;
+    margin-top: 40px;
     margin-bottom: 40px;
   }
 
-	.btn-main {
-		margin-top: 40px;
+  .btn-main {
+    margin-top: 40px;
     margin-bottom: 50px;
-	}
+  }
 }
