@@ -101,6 +101,7 @@ $(document).ready(function () {
   for (let emailSpan of emailSpans) {
     let emailLink = document.createElement("a");
     let emailAddress = emailSpan.attributes.getNamedItem("data-user").value.split('').reverse().join('') + "@" + emailSpan.attributes.getNamedItem("data-domain").value.split('').reverse().join('');
+    emailLink.className = "e-mail";
     emailLink.href = "mailto:" + emailAddress;
     emailLink.innerText = emailAddress;
     emailSpan.parentElement.insertBefore(emailLink, emailSpan);
