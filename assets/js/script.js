@@ -100,11 +100,14 @@ $(document).ready(function () {
 
   for (let emailSpan of emailSpans) {
     let emailLink = document.createElement("a");
-    let emailAddress = emailSpan.attributes.getNamedItem("data-user").value.split('').reverse().join('') + "@" + emailSpan.attributes.getNamedItem("data-domain").value.split('').reverse().join('');
+    let emailAddress = emailSpan.getAttribute("data-user").split('').reverse().join('') + "@" + emailSpan.getAttribute("data-domain").split('').reverse().join('');
     emailLink.className = "e-mail";
     emailLink.href = "mailto:" + emailAddress;
+    if (emailSpan.hasAttribute("data-params")) {
+       emailLink.href = emailLink.href + "?" + emailSpan.getAttribute("data-params").split('').reverse().join('');
+    }
     emailLink.innerText = emailAddress;
     emailSpan.parentElement.insertBefore(emailLink, emailSpan);
-    emailSpan.parentElement.removeChild(emailSpan)
+    emailSpan.parentElement.removeChild(emailSpan);
   }
 });
