@@ -4,9 +4,9 @@
       <div class="col-md-12">
         <div class="footer-menu">
           <ul>
-            {{ range site.Menus.footer }}
+{{ range site.Menus.footer -}}
             <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
-            {{ end }}
+{{- end }}
           </ul>
         </div>
         <p class="copyright">{{ site.Params.copyright | markdownify }}</p>
@@ -15,24 +15,27 @@
   </div>
 </footer>
 
-<!-- Google Maps API -->
-{{ if site.Params.gmap.enable }}
-{{ if ("contact/" | relLangURL | eq .RelPermalink) }}
-<script defer src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.gmap.gmap_api }}&libraries=places"></script>
-{{ end }}
-{{ end }}
+{{ with $.Site.Params.gmap -}}
+  {{ if .enable -}}
+    {{ "<!-- Google Maps API -->" | safeHTML }}
+    {{ if ("contact/" | relLangURL | eq .RelPermalink) -}}
+<script defer src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.gmap.gmap_api }}&libraries= places"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
 
-<!-- JS plugins -->
-{{ range site.Params.plugins.js }}
+{{ "<!-- JS plugins -->" | safeHTML }}
+{{- range site.Params.plugins.js }}
 <script src="{{ .link | relURL }}" {{ .attributes | safeHTMLAttr }}></script>
-{{ end }}
+{{- end }}
 
-<!-- Main script -->
-{{ $script := slice (resources.Get "js/script.js") (resources.Get "js/custom.js") | resources.Concat "js/bundled.js" | minify }}
+{{ "<!-- Main script -->" | safeHTML }}
+{{ $script := slice (resources.Get "js/script.js") (resources.Get "js/custom.js") | resources.Concat "js/bundled.js" | resources.ExecuteAsTemplate "js/compiled.js" . | minify -}}
 <script src="{{ $script.RelPermalink }}"></script>
 
-<!-- Cookie -->
-{{ if site.Params.cookies.enable }}
+{{ with $.Site.Params.cookies -}}
+  {{ if .enable -}}
+    {{ "<!-- Cookie script -->" | safeHTML }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 <div id="js-cookie-box" class="cookie-box cookie-box-hide">
   This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-main btn-solid-border">I Accept</span>
@@ -53,7 +56,8 @@
   })(jQuery);
 </script>
 
-<!-- Cookie style -->
+
+    {{ "<!-- Cookie style -->" | safeHTML }}
 <style>
 .cookie-box {
   position: fixed;
@@ -72,4 +76,5 @@
   display: none;
 }
 </style>
-{{ end }}
+  {{- end }}
+{{- end }}

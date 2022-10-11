@@ -1,7 +1,11 @@
 // Preloader js
+{{ with $.Site.Params.preloader -}}
+  {{ if .enable -}}
 $(window).on('load', function () {
   $('.preloader').fadeOut(100);
 });
+  {{- end }}
+{{- end }}
 
 $(document).ready(function () {
   'use strict';
